@@ -1,42 +1,51 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/*make website deafult background */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+body{
+  background-color: #0c0c1d;
+  color: lightgray;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;  /*inherit the colour of body tag - lightgray */
+}
+
+/*default end*/
+
+section {
+  height: 100vh;
+  scroll-snap-align: center;
+}
+
+/*defining a function for mobile sizes - make responsive*/
+
+@mixin mobile {
+  @media (max-width: 738px) {
+      @content;   
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/*defining a function for tablet sizes - responsive*/
+@mixin tablet {
+  @media (max-width: 1024px) {
+      @content;       
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+/*define a function for dekstop sizes - responsive*/
+@mixin desktop {
+  @media (max-width: 1366px) {
+      @content;       
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
