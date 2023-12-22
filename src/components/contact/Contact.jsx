@@ -28,7 +28,7 @@ const Contact = () => {
   const isInView = useInView(ref, { margin: "-100px" });
 
   //email js configuration start
-  {/*const sendEmail = (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
@@ -46,7 +46,7 @@ const Contact = () => {
           setError(true);
         }
       );
-  };*/}
+  };
 //end
 
   //created animation
